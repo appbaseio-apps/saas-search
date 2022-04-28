@@ -1,20 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import './App.css';
+import "./App.css";
+import { Autocomplete } from "./Autocomplete";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      Hello world
+      <Autocomplete openOnFocus={true} defaultActiveItemId={0} />
     </div>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
