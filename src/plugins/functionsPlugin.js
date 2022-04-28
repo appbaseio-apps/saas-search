@@ -1,11 +1,11 @@
-import { bellIcon, moonIcon, sunIcon } from "./icons";
+import { bellIcon, googleIcon, moonIcon, sunIcon } from "./icons";
 import Suggestion from "./Suggestion";
 
 const data = [
   {
     label: "/alert",
     description: "Throws a friendly alert",
-    callback: (item) => alert(`An alert was triggered.`),
+    callback: (query) => alert(`An alert was triggered.`),
     icon: bellIcon,
     matchAny: false,
   },
@@ -29,6 +29,17 @@ const data = [
     icon: sunIcon,
     matchAny: false,
   },
+  {
+    label: "Search on Google",
+    description: "Google search in new window",
+    callback: (query) => {
+      const queryParam = query.replace(" ", "+");
+      //Open in new window
+      window.open(`https://www.google.com/search?q=${queryParam}`, "_blank");
+    },
+    icon: googleIcon,
+    matchAny: true,
+  },
 ];
 
 const functionsPlugin = {
@@ -37,8 +48,9 @@ const functionsPlugin = {
       {
         sourceId: "functions",
         getItems() {
-          return data.filter(({ label }) =>
-            label.toLowerCase().includes(query.toLowerCase())
+          return data.filter(
+            ({ label, matchAny }) =>
+              label.toLowerCase().includes(query.toLowerCase()) || matchAny
           );
         },
         templates: {
@@ -54,7 +66,7 @@ const functionsPlugin = {
         },
         onSelect({ item }) {
           if (typeof item.callback === "function") {
-            item.callback(item);
+            item.callback(query);
             setQuery("");
           }
         },
