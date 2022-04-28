@@ -46,6 +46,9 @@ const gitHubReposPlugin = {
           );
         },
         templates: {
+          header() {
+            return <div className="header">Repositories</div>;
+          },
           item({ item }) {
             return <Suggestion item={item} />;
           },

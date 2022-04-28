@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import "./App.css";
 import { Autocomplete } from "./Autocomplete";
 
+import functionsPlugin from "./plugins/functionsPlugin";
 import gitHubReposPlugin from "./plugins/githubReposPlugin";
 
 export default function App() {
@@ -12,7 +13,7 @@ export default function App() {
       <Autocomplete
         openOnFocus={true}
         defaultActiveItemId={0}
-        plugins={[gitHubReposPlugin]}
+        plugins={[gitHubReposPlugin, functionsPlugin]}
       />
     </div>
   );
