@@ -5,9 +5,12 @@
   "dependencies": {
     "@algolia/autocomplete-js": "^1.6.2",
     "@algolia/autocomplete-theme-classic": "^1.6.2",
+    "@appbaseio/autocomplete-suggestions-plugin": "^1.1.1-alpha",
+    "json-tree-view": "^0.4.12",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "util": "^0.12.4"
   },
   "scripts": {
     "start": "react-scripts start",
