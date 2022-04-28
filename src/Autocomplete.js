@@ -1,6 +1,8 @@
 import { autocomplete } from "@algolia/autocomplete-js";
 import "@algolia/autocomplete-theme-classic";
-import { useEffect, useRef } from "react";
+
+import React, { createElement, Fragment, useEffect, useRef } from "react";
+import { render } from "react-dom";
 
 export function Autocomplete(props) {
   const containerRef = useRef(null);
@@ -14,6 +16,7 @@ export function Autocomplete(props) {
     const search = autocomplete({
       container: containerRef.current,
       placeholder: "Search",
+      renderer: { createElement, Fragment, render }, //Needed for rendering with react
       ...props,
     });
     // Destroy the search instance in cleanup
