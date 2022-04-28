@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import "./App.css";
 import { Autocomplete } from "./Autocomplete";
+import "./App.css";
 
 import functionsPlugin from "./plugins/functionsPlugin";
 import gitHubReposPlugin from "./plugins/githubReposPlugin";

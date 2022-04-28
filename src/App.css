@@ -1,11 +1,22 @@
+:root {
+  --aa-font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(var(--aa-background-color-rgb));
+  margin: 0px;
+}
 .App,
 .aa-ItemContentTitle {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: var(--aa-font-family);
+}
+.App {
+  margin: 20px;
 }
 
 .header {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #444;
+  color: currentColor;
   border-bottom: 2px solid currentColor;
   padding-bottom: 0.5em;
   font-size: 0.75rem;
