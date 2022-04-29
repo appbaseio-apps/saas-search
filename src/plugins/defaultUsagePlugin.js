@@ -5,7 +5,7 @@ import { appbaseClientConfig, rsApiConfig } from "./config";
 import { renderResults } from "./utils";
 
 // default usage: plugin to fetch suggestions
-export const defaultUsagePlugin = createSuggestionsPlugin(
+const defaultUsagePlugin = createSuggestionsPlugin(
   appbaseClientConfig,
   rsApiConfig,
   {
@@ -35,3 +35,5 @@ export const defaultUsagePlugin = createSuggestionsPlugin(
     },
   }
 );
+
+export default defaultUsagePlugin;

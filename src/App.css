@@ -24,3 +24,73 @@ body {
   margin-bottom: 0;
   font-weight: bold;
 }
+
+.container {
+  margin: 0 auto;
+  max-width: 640px;
+  width: 100%;
+}
+
+.product-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  padding: 1rem 0.5rem;
+  height: 120px;
+  border: 1px solid rgba(62, 52, 211, 0.205);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.product-item .product-image {
+  flex: 0 0 20%;
+  height: 100%;
+  overflow: hidden;
+  margin-right: 2rem;
+  border: 1px solid rgb(62, 52, 211);
+}
+
+.product-item .product-image > img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  height: 100%;
+}
+
+.product-item .product-details {
+  text-align: left;
+  width: 74%;
+}
+
+.product-item .product-details h4 {
+  text-align: left;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-transform: capitalize;
+}
+
+.product-item .product-details p {
+  text-align: left;
+  margin-top: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+#result {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: white;
+  max-height: 75vh;
+  overflow-y: scroll;
+  display: none;
+}
+
+#results-stats {
+  display: block;
+  text-align: center;
+  padding-top: 2rem;
+}
