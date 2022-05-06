@@ -1,7 +1,10 @@
 {
-  "name": "omnibar",
+  "name": "saas-search",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">13 <15"
+  },
   "dependencies": {
     "@algolia/autocomplete-js": "^1.6.2",
     "@algolia/autocomplete-theme-classic": "^1.6.2",
