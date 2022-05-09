@@ -1,4 +1,4 @@
-# Saas search with `autcomplete.js`
+# SAAS search with `autocomplete.js`
 
 A searchbar which can not only search for results but also perform tasks at your fingertips. Tasks such as toggling your theme to dark/light, searching the same on google, etc. It's not just a searchbar, it's a swiss army knife.
 
@@ -16,11 +16,69 @@ If your site has a billion features then your users might not find the correct f
 
 ## Using autocomplete-suggestion-plugin
 
-Make some config variables to use in the plugin. This details are available from your [appbase cluster.](https://docs.appbase.io/docs/reactivesearch/autocomplete-plugin/apireference/)
-![Config](/docs/assets/config.png)
+First we make some config variables to use in the plugin. This details are available from your [appbase cluster.](https://docs.appbase.io/docs/reactivesearch/autocomplete-plugin/apireference/)
 
-Make a plugin which fetches results from index.
-![default usage plugin](/docs/assets/defaultUsagePlugin.png)
+Below is appbase config with app(index), url and credentials. The `settings` field is optional.
+
+```js
+// appbase client config object
+export const appbaseClientConfig = {
+  url: "https://appbase-demo-ansible-abxiydt-arc.searchbase.io",
+  app: "best-buy-dataset",
+  credentials: "b8917d239a52:82a2f609-6439-4253-a542-3697f5545947",
+  settings: {
+    userId: "s@s",
+    enableQueryRules: true,
+    recordAnalytics: true,
+  },
+};
+```
+
+Below is **reactivesearch** config. It is similar to `props` you would pass to [`SearchBox` component.](https://docs.appbase.io/docs/reactivesearch/v3/search/searchbox/#props)
+
+```js
+export const rsApiConfig = {
+  highlight: true,
+  dataField: [
+    {
+      field: "name.autosuggest",
+      weight: "1",
+    },
+    {
+      field: "name",
+      weight: "3",
+    },
+  ],
+  enableRecentSuggestions: true,
+  recentSuggestionsConfig: {
+    size: 2,
+    minHits: 2,
+    minChars: 4,
+    index: "best-buy-dataset",
+  },
+  enablePopularSuggestions: true,
+  popularSuggestionsConfig: {
+    size: 2,
+    minChars: 3,
+    minCount: 3,
+    index: "best-buy-dataset",
+  },
+  index: "best-buy-dataset",
+  size: 5,
+};
+```
+
+In order to fetch results from **best-buy-dataset** index, we need to create a plugin using [**autocomplete-suggestions-plugin**.](https://github.com/appbaseio/autocomplete-suggestions-plugin)
+We can pass the variables created above to the plugin and we are done.
+
+```js
+import createSuggestionsPlugin from "@appbaseio/autocomplete-suggestions-plugin";
+
+const defaultUsagePlugin = createSuggestionPlugin(
+  appbaseClientConfig,
+  rsApiConfig
+);
+```
 
 Make a plugin which displays results using custom UI.
 ![advanced usage plugin](/docs/assets/advancedUsagePlugin.png)
