@@ -191,7 +191,7 @@ Similar to default usage, add the plugin to autocomplete.
 const search = autocomplete({
   container: containerRef.current,
   placeholder: "Search",
-  plugins: [defaultUsagePlugin],
+  plugins: [advancedUsagePlugin],
 });
 ```
 
