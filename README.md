@@ -213,7 +213,7 @@ const data = [
 ];
 ```
 
-The plugin is created as below. [`<Suggestion/>`](/blob/master/src/plugins/Suggestion.js) is a UI component for rendering suggestions.
+The plugin is created as below. [`<Suggestion/>`](/src/plugins/Suggestion.js) is a UI component for rendering suggestions.
 
 ```js
 const gitHubReposPlugin = {
