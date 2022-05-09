@@ -14,6 +14,20 @@ Users hate using the mouse. Eliminate the need to use the mouse by getting more 
 
 If your site has a billion features then your users might not find the correct feature when they need it. Solve the problem of feature discovery through search.
 
+## Using autocomplete-suggestion-plugin
+
+Make some config variables to use in the plugin. This details are available from your [appbase cluster.](https://docs.appbase.io/docs/reactivesearch/autocomplete-plugin/apireference/)
+![Config](/docs/assets/config.png)
+
+Make a plugin which fetches results from index.
+![default usage plugin](/docs/assets/defaultUsagePlugin.png)
+
+Make a plugin which displays results using custom UI.
+![advanced usage plugin](/docs/assets/advancedUsagePlugin.png)
+
+Use the plugins in autocomplete.
+![Use plugins in autocomplete](/docs/assets/usage.png)
+
 ## Building locally
 
 This guide assumes you have a node engine running on `v14` or similar and yarn package manager installed.
