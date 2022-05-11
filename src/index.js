@@ -6,24 +6,10 @@ import { Autocomplete } from "./Autocomplete";
 import "./App.css";
 import "../node_modules/json-tree-view/devtools.css";
 
-import functionsPlugin from "./plugins/functionsPlugin";
-import gitHubReposPlugin from "./plugins/githubReposPlugin";
-import defaultUsagePlugin from "./plugins/defaultUsagePlugin";
-import advancedUsagePlugin from "./plugins/advancedUsagePlugin";
-
 export default function App() {
   return (
     <div className="App">
-      <Autocomplete
-        openOnFocus={true}
-        defaultActiveItemId={0}
-        plugins={[
-          gitHubReposPlugin,
-          functionsPlugin,
-          defaultUsagePlugin,
-          advancedUsagePlugin,
-        ]}
-      />
+      <Autocomplete openOnFocus={true} defaultActiveItemId={0} />
     </div>
   );
 }
